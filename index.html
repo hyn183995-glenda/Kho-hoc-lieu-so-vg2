@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kho học liệu số – Trường TH&THCS Vĩnh Gia 2</title>
+<link rel="icon" href="logo.png">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#f3f6fb;--card:#fff;--tx:#14233b;--mut:#5c6b82;--bd:#d9e1ee;--pri:#17407a;--acc:#2b7de9;--on:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1116;--card:#1c2027;--tx:#eef2f8;--mut:#9aa7ba;--bd:#2d333d;--pri:#17407a;--acc:#5aa2ff;--on:#fff}}
+:root[data-theme="dark"]{--bg:#0e1116;--card:#1c2027;--tx:#eef2f8;--mut:#9aa7ba;--bd:#2d333d;--pri:#17407a;--acc:#5aa2ff;--on:#fff}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.w{max-width:900px;margin:0 auto;padding:12px}
+header{background:var(--pri);color:var(--on);border-radius:16px;padding:22px 14px;text-align:center}
+header h1{margin:0;font-size:26px;letter-spacing:.5px}
+header p{margin:6px 0 0;font-size:15px;opacity:.9}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+.cat{background:var(--card);border:2px solid transparent;border-radius:14px;padding:14px 8px;text-align:center;font:inherit;color:var(--tx);cursor:pointer;min-height:104px}
+.cat.on{border-color:var(--acc)}
+.cat .i{font-size:26px;display:block}
+.cat b{display:block;font-size:17px;margin-top:4px}
+.cat small{color:var(--mut)}
+.bar{display:flex;gap:8px;margin:8px 0}
+input,select,textarea,button{font:inherit;color:var(--tx)}
+input,select,textarea{width:100%;padding:10px;border:1px solid var(--bd);border-radius:10px;background:var(--card)}
+.btn{background:var(--acc);color:#fff;border:0;border-radius:10px;padding:10px 14px;cursor:pointer;white-space:nowrap}
+.btn.g{background:transparent;color:var(--acc);border:1px solid var(--bd)}
+.item{background:var(--card);border-radius:12px;padding:12px;margin:8px 0;border-left:4px solid var(--acc)}
+.item h3{margin:0 0 4px;font-size:17px}
+.item h3 a{color:var(--acc);text-decoration:none}
+.meta{color:var(--mut);font-size:13px}
+.tag{display:inline-block;background:var(--bg);border-radius:20px;padding:2px 9px;font-size:12px;margin-right:4px}
+form{background:var(--card);border-radius:14px;padding:12px;display:none;gap:8px;flex-direction:column;margin:8px 0}
+form.show{display:flex}
+.empty{text-align:center;color:var(--mut);padding:24px}
+.x{float:right;background:none;border:0;color:#d33;cursor:pointer}
+footer{text-align:center;color:var(--mut);font-size:13px;padding:16px 0}
+
+.w{max-width:1100px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;align-items:center;gap:4px;background:var(--card);border-bottom:1px solid var(--bd);padding:6px 12px;overflow-x:auto;white-space:nowrap}
+nav .lg{height:36px;width:36px;margin-right:4px}
+nav .nm{margin-right:8px;color:var(--acc)}
+nav a{color:var(--tx);text-decoration:none;padding:8px 10px;border-radius:8px;font-size:14px;cursor:pointer}
+nav a:hover{background:var(--bg)}
+nav a.qt{background:var(--pri);color:#fff;font-weight:700;margin-left:auto}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--card)}
+header .big{height:96px;width:96px;background:#fff;border-radius:50%;padding:3px;margin-bottom:8px}
+@media(min-width:700px){.grid{grid-template-columns:repeat(5,1fr)}header h1{font-size:34px}}
+.adm{background:var(--card);border-radius:16px;padding:16px;margin:20px 0;border:2px solid var(--pri)}
+.adm h2{margin:0 0 10px;color:var(--acc);font-size:19px}
+.adm h4{margin:14px 0 6px}
+.note{background:var(--bg);border-left:4px solid #e8a317;border-radius:8px;padding:10px 12px;font-size:14px}
+.note code{background:var(--card);padding:2px 6px;border-radius:6px;font-weight:700;word-break:break-all}
+.adm .r{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}
+.adm .r input,.adm form input{margin:0}
+.adm form{display:flex;background:transparent;padding:0}
+#tl{font-size:14px;max-height:200px;overflow:auto;margin-top:8px}
+</style></head><body>
+<nav><img class="lg" src="logo.png" alt="Logo"><b class="nm">Vĩnh Gia 2</b><a href="#top">Trang chủ</a><a href="#hoclieu">Học liệu</a><a data-c="Đoàn thanh niên">Đoàn thanh niên</a><a data-c="Liên đội">Liên đội</a><a href="#quantri" class="qt">QUẢN TRỊ - TỔ CHUYỂN ĐỔI SỐ</a></nav>
+<div class="w" id="top">
+<header><img class="big" src="logo.png" alt="Logo trường"><h1>KHO HỌC LIỆU SỐ</h1><p>TRƯỜNG TH&amp;THCS VĨNH GIA 2 · AN GIANG</p></header>
+<div id="hoclieu"></div><div class="grid" id="cats"></div>
+<div class="bar"><input id="q" type="search" placeholder="Tìm học liệu, môn, khối, tác giả…"></div>
+<div id="fb"></div><div id="list"></div>
+<section class="adm" id="quantri"><h2>QUẢN TRỊ - TỔ CHUYỂN ĐỔI SỐ</h2>
+<div class="note"><b>⚠ Lưu ý khi tải lên:</b> đặt tên tệp theo quy tắc<br><code>họ và tên_tổ chuyên môn_môn_lớp.2026</code><br>Ví dụ: <code>Nguyễn Văn An_Tổ Toán-Tin_Toán_7.2026</code><br>Không dùng ký tự / \ ? : * trong tên tệp.</div>
+<h4>1. Tạo tên tệp đúng quy tắc</h4>
+<div class="r"><input id="g1" placeholder="Họ và tên"><input id="g2" placeholder="Tổ chuyên môn"><input id="g3" placeholder="Môn"><input id="g4" placeholder="Lớp"></div>
+<div class="bar"><input id="fn" readonly placeholder="Tên tệp sẽ hiện ở đây"><button class="btn g" id="cp" type="button">Sao chép</button></div>
+<h4>2. Nhập email và tải học liệu lên</h4>
+<a class="btn" id="fm" style="display:block;text-align:center;text-decoration:none" target="_blank" rel="noopener">📤 Mở biểu mẫu đăng học liệu (nhập email &amp; tải file)</a>
+<h4>3. Thư mục Drive của tổ</h4>
+<a class="btn g" id="ud" style="display:block;text-align:center;text-decoration:none" target="_blank" rel="noopener">📁 Mở thư mục Drive</a>
+</section>
+<footer>Tổ chuyển đổi số · Trường TH&amp;THCS Vĩnh Gia 2</footer>
+</div>
+<script src="config.js"></script>
+<script>
+const CATS=[["Học liệu Tiểu học","📖"],["Học liệu THCS","🎓"],["Bài giảng điện tử","🖥️"],["Video dạy học","🎬"],["Học liệu AI","🧠"],["Ngân hàng câu hỏi","📝"],["Tài liệu STEM","🧪"],["Tài nguyên dùng chung","📂"],["Đoàn thanh niên","🚩"],["Liên đội","🏅"]];
+const C=window.CONFIG||{},$=id=>document.getElementById(id);let items=[],cur="";
+const esc=s=>{const d=document.createElement("div");d.textContent=s||"";return d.innerHTML};
+const safe=u=>/^https?:\/\//i.test(u)?u:"#";
+const dl=id=>"https://drive.google.com/drive/folders/"+id;
+function csv(t){const r=[];let row=[],c="",q=false;for(let i=0;i<t.length;i++){const ch=t[i];
+ if(q){if(ch=='"'){if(t[i+1]=='"'){c+='"';i++}else q=false}else c+=ch}
+ else if(ch=='"')q=true;else if(ch==","){row.push(c);c=""}else if(ch=="\n"){row.push(c);r.push(row);row=[];c=""}else if(ch!="\r")c+=ch}
+ if(c||row.length){row.push(c);r.push(row)}return r}
+function fromSheet(t){const r=csv(t),h=r.shift().map(x=>x.trim().toLowerCase());
+ const g=(a,n)=>{const i=h.findIndex(x=>n.some(k=>x.startsWith(k)));return i<0?"":(a[i]||"").trim()};
+ const hasOk=h.some(x=>x.startsWith("duyệt"));
+ return r.map(a=>({title:g(a,["tên học liệu"]),cat:g(a,["danh mục"]),kind:g(a,["loại"]),sub:g(a,["môn"]),author:g(a,["giáo viên","họ và tên"]),url:(g(a,["đường dẫn","tệp","file"])||"").split(",")[0].trim(),desc:g(a,["mô tả"]),at:Date.parse(g(a,["dấu thời gian","timestamp"]).replace(/(\d+)\/(\d+)\/(\d+)/,"$3-$2-$1"))||0,ok:hasOk?g(a,["duyệt"]):"x"})).filter(x=>x.title&&x.ok).reverse()}
+function render(){
+ const q=$("q").value.toLowerCase().trim();
+ $("cats").innerHTML=CATS.map(([n,i])=>{const k=items.filter(x=>x.cat===n).length;return `<button class="cat${cur===n?" on":""}" data-n="${n}"><span class="i">${i}</span><b>${n}</b><small>${k} học liệu</small></button>`}).join("");
+ const fid=cur?(C.FOLDERS||{})[cur]:C.ROOT;
+ $("fb").innerHTML=fid?`<a class="btn" style="display:block;text-align:center;text-decoration:none" target="_blank" rel="noopener" href="${dl(fid)}">📁 Mở thư mục Drive${cur?": "+esc(cur):" của kho"}</a>`:"";
+ const r=items.filter(x=>(!cur||x.cat===cur)&&(!q||[x.title,x.sub,x.author,x.desc,x.cat].join(" ").toLowerCase().includes(q)));
+ $("list").innerHTML=r.length?r.map(x=>`<div class="item"><h3><a href="${esc(safe(x.url))}" target="_blank" rel="noopener">${esc(x.title)}</a></h3><div><span class="tag">${esc(x.cat)}</span>${x.kind?`<span class="tag">${esc(x.kind)}</span>`:""}${x.sub?`<span class="tag">${esc(x.sub)}</span>`:""}</div>${x.desc?`<div>${esc(x.desc)}</div>`:""}<div class="meta">GV: ${esc(x.author)}${x.at?" · "+new Date(x.at).toLocaleDateString("vi-VN"):""}</div></div>`).join(""):`<div class="empty">Chưa có học liệu nào.</div>`}
+$("cats").onclick=e=>{const b=e.target.closest(".cat");if(!b)return;cur=cur===b.dataset.n?"":b.dataset.n;render()};
+$("q").oninput=render;
+document.querySelectorAll("nav a[data-c]").forEach(a=>a.onclick=()=>{cur=a.dataset.c;render();$("hoclieu").scrollIntoView({behavior:"smooth"})});
+const gen=()=>{const v=["g1","g2","g3","g4"].map(i=>$(i).value.trim());$("fn").value=v.every(Boolean)?v.slice(0,3).join("_")+"_"+v[3]+".2026":""};
+["g1","g2","g3","g4"].forEach(i=>$(i).oninput=gen);
+$("cp").onclick=async()=>{try{await navigator.clipboard.writeText($("fn").value);$("cp").textContent="Đã chép ✓"}catch(e){$("fn").select()}};
+$("fm").href=C.FORM_URL||"#";$("ud").href=C.ROOT?dl(C.ROOT):"#";
+(async()=>{try{items=C.SHEET_CSV?fromSheet(await (await fetch(C.SHEET_CSV)).text()):await (await fetch("data/resources.json")).json()}catch(e){items=[]}render()})();
+render();
+</script></body></html>
