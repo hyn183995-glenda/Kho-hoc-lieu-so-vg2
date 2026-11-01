@@ -10,7 +10,7 @@ Website tĩnh chạy bằng GitHub Pages. Học liệu nhập qua Google Form, l
 
 ## 2. Nhận học liệu bằng Google Form (file về Drive của tổ trưởng)
 Tạo Form với các câu hỏi, đặt đúng tên tiêu đề:
-`Tên học liệu` · `Danh mục` (10 lựa chọn như trên trang) · `Loại nội dung` · `Môn/Khối` · `Giáo viên` · `Mô tả` · `Đường dẫn` (loại **Tải tệp lên**, hoặc ô văn bản nếu dán link).
+`Tên học liệu` · `Danh mục` (10 lựa chọn như trên trang) · `Loại nội dung` · `Môn/Khối` · `Tổ chuyên môn` (Tổ 1, Tổ 2-3, Tổ 4-5, Tổ GVBM, Tổ THCS, Tổ Văn phòng) · `Giáo viên` · `Mô tả` · `Đường dẫn` (loại **Tải tệp lên**, hoặc ô văn bản nếu dán link).
 Bật **Cài đặt > Thu thập địa chỉ email**. Ghi nhắc quy tắc đặt tên tệp: `họ và tên_tổ chuyên môn_môn_lớp.2026`.
 Trong tab **Câu trả lời** > liên kết tới Google Sheet.
 

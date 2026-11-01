@@ -56,22 +56,48 @@ header .big{height:96px;width:96px;background:#fff;border-radius:50%;padding:3px
 .adm .r input,.adm form input{margin:0}
 .adm form{display:flex;background:transparent;padding:0}
 #tl{font-size:14px;max-height:200px;overflow:auto;margin-top:8px}
+
+nav{background:linear-gradient(90deg,#0b2a57,#1f63c2);flex-wrap:wrap;overflow:visible;box-shadow:0 4px 14px rgba(11,42,87,.35);border:0;padding:8px 14px;gap:2px}
+nav .nm{color:#fff;font-size:17px}nav a{color:#fff;font-weight:600;font-size:14px}
+nav a:hover{background:rgba(255,255,255,.18)}
+nav a.qt{background:linear-gradient(90deg,#f5b301,#ff7a00);color:#1a1200;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+body::before{background:#0b2a57}
+.dd{position:relative}.ddm{display:none;position:absolute;top:100%;left:0;min-width:180px;background:var(--card);border-radius:12px;box-shadow:0 10px 28px rgba(0,0,0,.3);padding:6px;z-index:40}
+.dd:hover .ddm,.dd.open .ddm{display:block}.ddm a{display:block;color:var(--tx);font-weight:500}.ddm a:hover{background:var(--bg)}
+header{background:linear-gradient(135deg,#0b2a57,#2b7de9);box-shadow:0 8px 24px rgba(23,64,122,.35);padding:28px 14px}
+.sec{margin:22px 0 8px;font-size:21px;color:var(--acc)}
+.kp{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.kp div{background:var(--card);border-radius:14px;padding:14px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,.08);border-top:4px solid var(--acc)}
+.kp b{display:block;font-size:30px;color:var(--acc)}.kp span{color:var(--mut);font-size:13px}
+.dg{display:grid;gap:10px;margin-top:10px}
+.pn{background:var(--card);border-radius:14px;padding:12px;box-shadow:0 2px 10px rgba(0,0,0,.08)}.pn h3{margin:0 0 8px;font-size:16px}
+.br{display:grid;grid-template-columns:110px 1fr 28px;gap:6px;align-items:center;font-size:13px;margin:5px 0}
+.br i{background:var(--bg);border-radius:20px;height:12px;overflow:hidden}.br u{display:block;height:100%;background:linear-gradient(90deg,#2b7de9,#17c3b2);border-radius:20px}
+.tli{display:flex;gap:10px;padding:6px 0;position:relative}.tli>i{flex:0 0 12px;height:12px;border-radius:50%;background:var(--acc);margin-top:5px;box-shadow:0 0 0 3px var(--bg)}
+.tli:not(:last-child)::before{content:"";position:absolute;left:5px;top:20px;bottom:-6px;width:2px;background:var(--bd)}
+.tb{background:var(--pri);color:#fff;border-radius:10px;padding:8px 12px;margin:8px 0;font-weight:700}
+@media(min-width:700px){.kp{grid-template-columns:repeat(4,1fr)}.dg{grid-template-columns:1fr 1fr}}
 </style></head><body>
-<nav><img class="lg" src="logo.png" alt="Logo"><b class="nm">Vĩnh Gia 2</b><a href="#top">Trang chủ</a><a href="#hoclieu">Học liệu</a><a data-c="Đoàn thanh niên">Đoàn thanh niên</a><a data-c="Liên đội">Liên đội</a><a href="#quantri" class="qt">QUẢN TRỊ - TỔ CHUYỂN ĐỔI SỐ</a></nav>
+<nav><img class="lg" src="logo.png" alt="Logo"><b class="nm">Vĩnh Gia 2</b><a href="#top">Trang chủ</a><a href="#thongke">Thống kê</a><a href="#hoclieu">Học liệu</a><div class="dd"><a class="ddb">Tổ chuyên môn ▾</a><div class="ddm"><a data-t="Tổ 1">Tổ 1</a><a data-t="Tổ 2-3">Tổ 2-3</a><a data-t="Tổ 4-5">Tổ 4-5</a><a data-t="Tổ GVBM">Tổ GVBM</a><a data-t="Tổ THCS">Tổ THCS</a><a data-t="Tổ Văn phòng">Tổ Văn phòng</a></div></div><a data-c="Đoàn thanh niên">Đoàn thanh niên</a><a data-c="Liên đội">Liên đội</a><a href="#quantri" class="qt">QUẢN TRỊ - TỔ CHUYỂN ĐỔI SỐ</a></nav>
 <div class="w" id="top">
 <header><img class="big" src="logo.png" alt="Logo trường"><h1>KHO HỌC LIỆU SỐ</h1><p>TRƯỜNG TH&amp;THCS VĨNH GIA 2 · AN GIANG</p></header>
+<section id="thongke"><h2 class="sec">📊 Thống kê học liệu</h2>
+<div class="kp"><div><b id="k1">0</b><span>Tổng học liệu</span></div><div><b id="k2">0</b><span>Tổ đã đăng</span></div><div><b id="k3">0</b><span>Giáo viên đóng góp</span></div><div><b id="k4">0</b><span>Đăng trong tháng</span></div></div>
+<div class="dg"><div class="pn"><h3>Theo tổ chuyên môn</h3><div id="bd"></div></div><div class="pn"><h3>Theo danh mục</h3><div id="bc"></div></div><div class="pn"><h3>Giáo viên đăng nhiều nhất</h3><div id="bp"></div></div><div class="pn"><h3>🕒 Dòng thời gian tải lên gần đây</h3><div id="tl1"></div></div></div></section>
 <div id="hoclieu"></div><div class="grid" id="cats"></div>
 <div class="bar"><input id="q" type="search" placeholder="Tìm học liệu, môn, khối, tác giả…"></div>
 <div id="fb"></div><div id="list"></div>
 <section class="adm" id="quantri"><h2>QUẢN TRỊ - TỔ CHUYỂN ĐỔI SỐ</h2>
+<div id="tobar" class="tb">Chọn tổ ở thanh menu để đăng đúng bộ phận.</div>
 <div class="note"><b>⚠ Lưu ý khi tải lên:</b> đặt tên tệp theo quy tắc<br><code>họ và tên_tổ chuyên môn_môn_lớp.2026</code><br>Ví dụ: <code>Nguyễn Văn An_Tổ Toán-Tin_Toán_7.2026</code><br>Không dùng ký tự / \ ? : * trong tên tệp.</div>
 <h4>1. Tạo tên tệp đúng quy tắc</h4>
-<div class="r"><input id="g1" placeholder="Họ và tên"><input id="g2" placeholder="Tổ chuyên môn"><input id="g3" placeholder="Môn"><input id="g4" placeholder="Lớp"></div>
+<div class="r"><input id="g1" placeholder="Họ và tên"><select id="g2"><option value="">Tổ chuyên môn</option><option>Tổ 1</option><option>Tổ 2-3</option><option>Tổ 4-5</option><option>Tổ GVBM</option><option>Tổ THCS</option><option>Tổ Văn phòng</option></select><input id="g3" placeholder="Môn"><input id="g4" placeholder="Lớp"></div>
 <div class="bar"><input id="fn" readonly placeholder="Tên tệp sẽ hiện ở đây"><button class="btn g" id="cp" type="button">Sao chép</button></div>
 <h4>2. Nhập email và tải học liệu lên</h4>
 <a class="btn" id="fm" style="display:block;text-align:center;text-decoration:none" target="_blank" rel="noopener">📤 Mở biểu mẫu đăng học liệu (nhập email &amp; tải file)</a>
 <h4>3. Thư mục Drive của tổ</h4>
 <a class="btn g" id="ud" style="display:block;text-align:center;text-decoration:none" target="_blank" rel="noopener">📁 Mở thư mục Drive</a>
+<h4>4. Lịch sử tải lên theo tổ / cá nhân</h4><select id="tsel"><option value="">Tất cả các tổ</option><option>Tổ 1</option><option>Tổ 2-3</option><option>Tổ 4-5</option><option>Tổ GVBM</option><option>Tổ THCS</option><option>Tổ Văn phòng</option></select><div id="tl2" style="margin-top:8px"></div>
 </section>
 <footer>Tổ chuyển đổi số · Trường TH&amp;THCS Vĩnh Gia 2</footer>
 </div>
@@ -89,14 +115,29 @@ function csv(t){const r=[];let row=[],c="",q=false;for(let i=0;i<t.length;i++){c
 function fromSheet(t){const r=csv(t),h=r.shift().map(x=>x.trim().toLowerCase());
  const g=(a,n)=>{const i=h.findIndex(x=>n.some(k=>x.startsWith(k)));return i<0?"":(a[i]||"").trim()};
  const hasOk=h.some(x=>x.startsWith("duyệt"));
- return r.map(a=>({title:g(a,["tên học liệu"]),cat:g(a,["danh mục"]),kind:g(a,["loại"]),sub:g(a,["môn"]),author:g(a,["giáo viên","họ và tên"]),url:(g(a,["đường dẫn","tệp","file"])||"").split(",")[0].trim(),desc:g(a,["mô tả"]),at:Date.parse(g(a,["dấu thời gian","timestamp"]).replace(/(\d+)\/(\d+)\/(\d+)/,"$3-$2-$1"))||0,ok:hasOk?g(a,["duyệt"]):"x"})).filter(x=>x.title&&x.ok).reverse()}
-function render(){
+ return r.map(a=>({title:g(a,["tên học liệu"]),cat:g(a,["danh mục"]),kind:g(a,["loại"]),sub:g(a,["môn"]),dept:g(a,["tổ"]),author:g(a,["giáo viên","họ và tên"]),url:(g(a,["đường dẫn","tệp","file"])||"").split(",")[0].trim(),desc:g(a,["mô tả"]),at:Date.parse(g(a,["dấu thời gian","timestamp"]).replace(/(\d+)\/(\d+)\/(\d+)/,"$3-$2-$1"))||0,ok:hasOk?g(a,["duyệt"]):"x"})).filter(x=>x.title&&x.ok).reverse()}
+function render0(){
  const q=$("q").value.toLowerCase().trim();
  $("cats").innerHTML=CATS.map(([n,i])=>{const k=items.filter(x=>x.cat===n).length;return `<button class="cat${cur===n?" on":""}" data-n="${n}"><span class="i">${i}</span><b>${n}</b><small>${k} học liệu</small></button>`}).join("");
  const fid=cur?(C.FOLDERS||{})[cur]:C.ROOT;
  $("fb").innerHTML=fid?`<a class="btn" style="display:block;text-align:center;text-decoration:none" target="_blank" rel="noopener" href="${dl(fid)}">📁 Mở thư mục Drive${cur?": "+esc(cur):" của kho"}</a>`:"";
  const r=items.filter(x=>(!cur||x.cat===cur)&&(!q||[x.title,x.sub,x.author,x.desc,x.cat].join(" ").toLowerCase().includes(q)));
- $("list").innerHTML=r.length?r.map(x=>`<div class="item"><h3><a href="${esc(safe(x.url))}" target="_blank" rel="noopener">${esc(x.title)}</a></h3><div><span class="tag">${esc(x.cat)}</span>${x.kind?`<span class="tag">${esc(x.kind)}</span>`:""}${x.sub?`<span class="tag">${esc(x.sub)}</span>`:""}</div>${x.desc?`<div>${esc(x.desc)}</div>`:""}<div class="meta">GV: ${esc(x.author)}${x.at?" · "+new Date(x.at).toLocaleDateString("vi-VN"):""}</div></div>`).join(""):`<div class="empty">Chưa có học liệu nào.</div>`}
+ $("list").innerHTML=r.length?r.map(x=>`<div class="item"><h3><a href="${esc(safe(x.url))}" target="_blank" rel="noopener">${esc(x.title)}</a></h3><div><span class="tag">${esc(x.cat)}</span>${x.dept?`<span class="tag">${esc(x.dept)}</span>`:""}${x.kind?`<span class="tag">${esc(x.kind)}</span>`:""}${x.sub?`<span class="tag">${esc(x.sub)}</span>`:""}</div>${x.desc?`<div>${esc(x.desc)}</div>`:""}<div class="meta">GV: ${esc(x.author)}${x.at?" · "+new Date(x.at).toLocaleDateString("vi-VN"):""}</div></div>`).join(""):`<div class="empty">Chưa có học liệu nào.</div>`}
+const TOS=["Tổ 1","Tổ 2-3","Tổ 4-5","Tổ GVBM","Tổ THCS","Tổ Văn phòng"];let tsel="";
+const fd=t=>t?new Date(t).toLocaleDateString("vi-VN"):"";
+function bars(el,p){const m=Math.max(1,...p.map(x=>x[1]));$(el).innerHTML=p.length?p.map(([n,v])=>`<div class="br"><span>${esc(n)}</span><i><u style="width:${v/m*100}%"></u></i><b>${v}</b></div>`).join(""):'<div class="empty">Chưa có dữ liệu</div>'}
+function tline(el,a){$(el).innerHTML=a.length?a.map(x=>`<div class="tli"><i></i><div><b>${esc(x.title)}</b><div class="meta">${fd(x.at)} · ${esc(x.author)} · ${esc(x.dept||"—")} · ${esc(x.cat)}</div></div></div>`).join(""):'<div class="empty">Chưa có dữ liệu</div>'}
+function dash(){const n=new Date(),m0=new Date(n.getFullYear(),n.getMonth(),1).getTime(),cnt={};
+ items.forEach(x=>{if(x.author)cnt[x.author]=(cnt[x.author]||0)+1});
+ $("k1").textContent=items.length;$("k2").textContent=new Set(items.map(x=>x.dept).filter(Boolean)).size;$("k3").textContent=Object.keys(cnt).length;$("k4").textContent=items.filter(x=>x.at>=m0).length;
+ bars("bd",TOS.map(t=>[t,items.filter(x=>x.dept===t).length]));
+ bars("bc",CATS.map(c=>[c[0],items.filter(x=>x.cat===c[0]).length]));
+ bars("bp",Object.entries(cnt).sort((a,b)=>b[1]-a[1]).slice(0,5));
+ tline("tl1",items.slice(0,8));tline("tl2",items.filter(x=>!tsel||x.dept===tsel).slice(0,30))}
+const render=()=>{render0();dash()};
+document.querySelectorAll("nav a[data-t]").forEach(a=>a.onclick=()=>{tsel=a.dataset.t;$("g2").value=tsel;$("tsel").value=tsel;gen();$("tobar").textContent="Đang đăng cho: "+tsel;dash();document.querySelector(".dd").classList.remove("open");$("quantri").scrollIntoView({behavior:"smooth"})});
+$("tsel").onchange=()=>{tsel=$("tsel").value;dash()};
+document.querySelector(".ddb").onclick=()=>document.querySelector(".dd").classList.toggle("open");
 $("cats").onclick=e=>{const b=e.target.closest(".cat");if(!b)return;cur=cur===b.dataset.n?"":b.dataset.n;render()};
 $("q").oninput=render;
 document.querySelectorAll("nav a[data-c]").forEach(a=>a.onclick=()=>{cur=a.dataset.c;render();$("hoclieu").scrollIntoView({behavior:"smooth"})});
@@ -104,6 +145,6 @@ const gen=()=>{const v=["g1","g2","g3","g4"].map(i=>$(i).value.trim());$("fn").v
 ["g1","g2","g3","g4"].forEach(i=>$(i).oninput=gen);
 $("cp").onclick=async()=>{try{await navigator.clipboard.writeText($("fn").value);$("cp").textContent="Đã chép ✓"}catch(e){$("fn").select()}};
 $("fm").href=C.FORM_URL||"#";$("ud").href=C.ROOT?dl(C.ROOT):"#";
-(async()=>{try{items=C.SHEET_CSV?fromSheet(await (await fetch(C.SHEET_CSV)).text()):await (await fetch("data/resources.json")).json()}catch(e){items=[]}render()})();
+(async()=>{try{items=C.SHEET_CSV?fromSheet(await (await fetch(C.SHEET_CSV)).text()):await (await fetch("data/resources.json")).json()}catch(e){items=[]}items.sort((a,b)=>b.at-a.at);render()})();
 render();
 </script></body></html>
