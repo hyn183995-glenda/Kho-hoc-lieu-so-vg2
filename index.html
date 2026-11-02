@@ -114,9 +114,11 @@ function route(){
  document.querySelectorAll("nav a").forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+h));
  const dd=document.querySelector(".dd");if(dd)dd.classList.remove("open");
  if(h==="all")deptView(null);else if(h==="quantri")admin();else if(d)deptView(d);else home();
+ if(msg)$("app").innerHTML+=`<p class="hint" style="text-align:center;${msg[0]=="⚠"?"color:#d33;font-weight:700;font-size:14px":""}">${esc(msg)}</p>`;
  window.scrollTo(0,0)}
 window.addEventListener("hashchange",route);
 document.querySelector(".ddb").onclick=()=>document.querySelector(".dd").classList.toggle("open");
-(async()=>{try{items=C.API_URL?await (await fetch(C.API_URL)).json():C.SHEET_CSV?fromSheet(await (await fetch(C.SHEET_CSV)).text()):await (await fetch("data/resources.json")).json()}catch(e){items=[]}items.sort((a,b)=>b.at-a.at);route()})();
+let msg="";
+(async()=>{try{if(!C.API_URL&&!C.SHEET_CSV)msg="⚠ Chưa dán link Apps Script vào API_URL trong config.js (hoặc config.js chưa được tải lên GitHub).";items=C.API_URL?await (await fetch(C.API_URL)).json():C.SHEET_CSV?fromSheet(await (await fetch(C.SHEET_CSV)).text()):await (await fetch("data/resources.json")).json()}catch(e){items=[];msg="⚠ Không đọc được dữ liệu từ Drive ("+(e.message||e)+"). Kiểm tra link Apps Script: phải kết thúc bằng /exec và để quyền truy cập là Bất kỳ ai."}if(!Array.isArray(items)){items=[];msg=msg||"⚠ Dữ liệu trả về không đúng định dạng."}else if(!msg)msg="✔ Đã đọc "+items.length+" học liệu từ Drive.";items.sort((a,b)=>b.at-a.at);route()})();
 route();
 </script></body></html>
