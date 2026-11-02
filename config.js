@@ -1,7 +1,7 @@
 // CẤU HÌNH KHO HỌC LIỆU SỐ – chỉ sửa file này
 window.CONFIG={
   // Link Web app của Apps Script (xem README). Có link này thì trang tự đọc file trong Drive
-  API_URL:"",
+  API_URL:"https://script.google.com/macros/s/AKfycbxKsCt013hcrCJt73Sfn3srjoDUwqLqCKNd_8A2mrobynaPs7hZrPbKqiX5Fp5IuhTl/exec",
   // Thư mục Drive của từng tổ / bộ phận (nơi giáo viên tải lên)
   DEPT_FOLDERS:{"Tổ 1":"1vRUsUkZd_7DNizvXsLyzXjJ-RgHpT6vX","Tổ 2-3":"1b_OJdL_ounlsimjVhZnfz4zxyC1VT97D","Tổ 4-5":"1pqCtYhIFoU7AUK1wWxRYGLRt9dkIAVpi","Tổ GVBM":"1uTOWVuI96i4VH_IJ4HQ_Q6wnt4ttdjSx","Tổ THCS":"1b6rASRdjs15L2WQdvEJPpDbuyb53Y1ns","Tổ Văn phòng":"1uGqtGQXWb35o3V-YW7-beAg3sRfsIJnV","Đoàn thanh niên":"1bEVRbq_pubVzzl90MKHbXEA6XmiOrY4k","Liên đội":"1eD4P0yaN2Ue3SP2HPJXquVEcAXTYliuh"},
   // Link Google Form đăng học liệu (xem README, bước 2)
