@@ -1,10 +1,16 @@
 // CẤU HÌNH KHO HỌC LIỆU SỐ – chỉ sửa file này
 window.CONFIG={
+  // Link Web app của Apps Script (xem README). Có link này thì trang tự đọc file trong Drive
+  API_URL:"",
+  // Thư mục Drive của từng tổ / bộ phận (nơi giáo viên tải lên)
+  DEPT_FOLDERS:{"Tổ 1":"1vRUsUkZd_7DNizvXsLyzXjJ-RgHpT6vX","Tổ 2-3":"1b_OJdL_ounlsimjVhZnfz4zxyC1VT97D","Tổ 4-5":"1pqCtYhIFoU7AUK1wWxRYGLRt9dkIAVpi","Tổ GVBM":"1uTOWVuI96i4VH_IJ4HQ_Q6wnt4ttdjSx","Tổ THCS":"1b6rASRdjs15L2WQdvEJPpDbuyb53Y1ns","Tổ Văn phòng":"1uGqtGQXWb35o3V-YW7-beAg3sRfsIJnV","Đoàn thanh niên":"1bEVRbq_pubVzzl90MKHbXEA6XmiOrY4k","Liên đội":"1eD4P0yaN2Ue3SP2HPJXquVEcAXTYliuh"},
   // Link Google Form đăng học liệu (xem README, bước 2)
-  FORM_URL:"https://forms.gle/YmBtBqcvnPM7Gk4LA",
+  FORM_URL:"",
   // Link CSV của Google Sheet nhận câu trả lời (Tệp > Chia sẻ > Công bố lên web > CSV). Để trống thì đọc data/resources.json
-  SHEET_CSV:"https://docs.google.com/spreadsheets/d/e/2PACX-1vROs_BWyK0S3HlIuF-Vc6FRrCQYsBePmWO00eOAnK5BFibeiZw8t_sMNp-xDd1-Td3RzUD6MdD2D8TI/pub?output=tsv",
-  ROOT:"1_UhVxsMWyCY_XX71wy5ISTGmAPt7Tjh8",
+  // (Tùy chọn) mã ô "Tổ chuyên môn" của Form để tự điền sẵn tổ, vd "entry.123456789"
+  FORM_DEPT_ENTRY:"",
+  SHEET_CSV:"",
+  ROOT:"1aMl0gICoetZ3TQEPiNccM-W2OYoU4-aG",
   FOLDERS:{
     "Học liệu Tiểu học":"1JIkYZmiNZfIB0iSqX79YZ6NMIGo-oLut",
     "Học liệu THCS":"1pHB28dcJGfmln-OarhBYc1DFTsoSLa_-",
