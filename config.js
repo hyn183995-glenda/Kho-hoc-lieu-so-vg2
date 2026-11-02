@@ -1,9 +1,9 @@
 // CẤU HÌNH KHO HỌC LIỆU SỐ – chỉ sửa file này
 window.CONFIG={
   // Link Google Form đăng học liệu (xem README, bước 2)
-  FORM_URL:"",
+  FORM_URL:"https://forms.gle/YmBtBqcvnPM7Gk4LA",
   // Link CSV của Google Sheet nhận câu trả lời (Tệp > Chia sẻ > Công bố lên web > CSV). Để trống thì đọc data/resources.json
-  SHEET_CSV:"",
+  SHEET_CSV:"https://docs.google.com/spreadsheets/d/e/2PACX-1vROs_BWyK0S3HlIuF-Vc6FRrCQYsBePmWO00eOAnK5BFibeiZw8t_sMNp-xDd1-Td3RzUD6MdD2D8TI/pub?output=tsv",
   ROOT:"1_UhVxsMWyCY_XX71wy5ISTGmAPt7Tjh8",
   FOLDERS:{
     "Học liệu Tiểu học":"1JIkYZmiNZfIB0iSqX79YZ6NMIGo-oLut",
