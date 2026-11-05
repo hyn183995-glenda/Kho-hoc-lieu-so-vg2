@@ -49,8 +49,13 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:18px 0}
 .hero{position:relative;overflow:hidden}.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.1)}
 .hint{font-size:12px;color:var(--mut);margin:2px 0 8px}
 .ug{display:grid;gap:10px;grid-template-columns:1fr 1fr}@media(min-width:800px){.ug{grid-template-columns:repeat(4,1fr)}}
-.hero .web{display:inline-block;margin-top:12px;background:#fff;color:#0b2a57;font-weight:700;text-decoration:none;border-radius:20px;padding:8px 16px;box-shadow:0 3px 10px rgba(0,0,0,.25)}</style></head><body>
-<nav><img class="lg" src="logo.png" alt="Logo"><b class="nm">Vĩnh Gia 2</b><a href="#home">Trang chủ</a><div class="dd"><a class="ddb">Tổ chuyên môn ▾</a><div class="ddm"><a href="#to1">🌱 Tổ 1</a><a href="#to23">📘 Tổ 2-3</a><a href="#to45">🎒 Tổ 4-5</a><a href="#gvbm">🎨 Tổ GVBM</a><a href="#thcs">🔬 Tổ THCS</a><a href="#vp">🗂️ Tổ Văn phòng</a></div></div><a href="#doan">🚩 Đoàn thanh niên</a><a href="#lidoi">🏅 Liên đội</a><a href="#all">Toàn bộ kho</a><a href="http://thvathcsvg2.edu.vn" target="_blank" rel="noopener">🌐 Website trường</a><a href="#quantri" class="qt">QUẢN TRỊ - TỔ CHUYỂN ĐỔI SỐ</a></nav><div class="w"><div id="app"></div><footer>Tổ chuyển đổi số · Trường TH&amp;THCS Vĩnh Gia 2 · Xã Vĩnh Gia, tỉnh An Giang<br><a href="http://thvathcsvg2.edu.vn" target="_blank" rel="noopener" style="color:var(--acc)">thvathcsvg2.edu.vn</a></footer></div>
+.hero .web{display:inline-block;margin-top:12px;background:#fff;color:#0b2a57;font-weight:700;text-decoration:none;border-radius:20px;padding:8px 16px;box-shadow:0 3px 10px rgba(0,0,0,.25)}.tile{position:relative}.stl{color:inherit;text-decoration:none}.stl::after{content:"";position:absolute;inset:0;border-radius:16px}
+.th{display:flex;gap:10px;align-items:center;margin-bottom:8px}.th .ic{margin:0;flex:0 0 50px}
+.st{display:flex;gap:6px;margin:6px 0}.st div{flex:1;background:var(--bg);border-radius:10px;text-align:center;padding:6px 2px}.st b{font-size:20px;color:var(--c)}.st span{font-size:11px;color:var(--mut)}
+.tm{display:flex;flex-wrap:wrap;gap:5px;margin:8px 0}.tm a{position:relative;z-index:2;font-size:12px;text-decoration:none;color:var(--tx);background:var(--bg);border-radius:20px;padding:3px 9px}.tm a b{display:inline;font-size:12px;color:var(--c)}
+.tb2{display:flex;gap:6px}.tb2 .btn{position:relative;z-index:2;padding:7px 11px;font-size:13px}
+#ld{display:none;position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,transparent,#ffd34d,transparent);background-size:200% 100%;animation:mv 1s linear infinite}@keyframes mv{to{background-position:-200% 0}}</style></head><body>
+<nav><img class="lg" src="logo.png" alt="Logo"><b class="nm">Vĩnh Gia 2</b><a href="#home">Trang chủ</a><div class="dd"><a class="ddb">Tổ chuyên môn ▾</a><div class="ddm"><a href="#to1">🌱 Tổ 1</a><a href="#to23">📘 Tổ 2-3</a><a href="#to45">🎒 Tổ 4-5</a><a href="#gvbm">🎨 Tổ GVBM</a><a href="#thcs">🔬 Tổ THCS</a><a href="#vp">🗂️ Tổ Văn phòng</a></div></div><a href="#doan">🚩 Đoàn thanh niên</a><a href="#lidoi">🏅 Liên đội</a><a href="#all">Toàn bộ kho</a><a href="http://thvathcsvg2.edu.vn" target="_blank" rel="noopener">🌐 Website trường</a><a href="#quantri" class="qt">QUẢN TRỊ - TỔ CHUYỂN ĐỔI SỐ</a><div id="ld"></div></nav><div class="w"><div id="app"></div><footer>Tổ chuyển đổi số · Trường TH&amp;THCS Vĩnh Gia 2 · Xã Vĩnh Gia, tỉnh An Giang<br><a href="http://thvathcsvg2.edu.vn" target="_blank" rel="noopener" style="color:var(--acc)">thvathcsvg2.edu.vn</a></footer></div>
 <script src="config.js"></script><script>
 const C=window.CONFIG||{},$=id=>document.getElementById(id);let items=[];
 const esc=s=>{const d=document.createElement("div");d.textContent=s||"";return d.innerHTML};
@@ -71,7 +76,7 @@ function fromSheet(t){const r=csv(t),h=r.shift().map(x=>x.trim().toLowerCase());
  return r.map(a=>({title:g(a,["tên học liệu"]),cat:g(a,["danh mục"]),kind:g(a,["loại"]),sub:g(a,["môn"]),dept:g(a,["tổ"]),author:g(a,["giáo viên","họ và tên"]),url:(g(a,["đường dẫn","tệp","file"])||"").split(",")[0].trim(),desc:g(a,["mô tả"]),at:Date.parse(g(a,["dấu thời gian","timestamp"]).replace(/(\d+)\/(\d+)\/(\d+)/,"$3-$2-$1"))||0,ok:hasOk?g(a,["duyệt"]):"x"})).filter(x=>x.title&&x.ok).reverse()}
 
 function formUrl(t){let u=C.FORM_URL||"";if(u&&t&&C.FORM_DEPT_ENTRY)u+=(u.includes("?")?"&":"?")+"usp=pp_url&"+C.FORM_DEPT_ENTRY+"="+encodeURIComponent(t);return u||"#"}
-function bars(p){const m=Math.max(1,...p.map(x=>x[1]));return p.length?p.map(([n,v])=>`<div class="br"><span>${esc(n)}</span><i><u style="width:${v/m*100}%"></u></i><b>${v}</b></div>`).join(""):'<div class="empty">Chưa có dữ liệu</div>'}
+function bars(p){const m=Math.max(1,...p.map(x=>x[1]));return p.length?p.map(([n,v,h])=>`<${h?"a href=\""+h+"\"":"div"} class="br" style="color:inherit;text-decoration:none"><span>${esc(n)}</span><i><u style="width:${v/m*100}%"></u></i><b>${v}</b></${h?"a":"div"}>`).join(""):'<div class="empty">Chưa có dữ liệu</div>'}
 function tline(a){return a.length?a.map(x=>{const d=dOf(x.dept||x.cat);return `<div class="tli"><i></i><div><b>${esc(x.title)}</b><div class="meta">${fd(x.at)} · ${esc(x.author||"—")} · ${d?d[2]+" ":""}${esc(x.dept||x.cat)}</div></div></div>`}).join(""):'<div class="empty">Chưa có dữ liệu</div>'}
 function itemsHtml(a){return a.length?a.map(x=>`<div class="item"><h3><a href="${esc(safe(x.url))}" target="_blank" rel="noopener">${esc(x.title)}</a></h3><div><span class="tag">${esc(x.cat)}</span>${x.kind?`<span class="tag">${esc(x.kind)}</span>`:""}${x.sub?`<span class="tag">${esc(x.sub)}</span>`:""}</div>${x.desc?`<div>${esc(x.desc)}</div>`:""}<div class="meta">GV: ${esc(x.author||"—")} · ${fd(x.at)}</div></div>`).join(""):'<div class="empty">Chưa có học liệu nào.</div>'}
 function donut(){const tot=items.length||1;let off=0;const sg=DEPTS.map(d=>{const v=items.filter(x=>(x.dept||x.cat)===d[1]).length,p=v/tot*100,c=`<circle r="15.915" cx="21" cy="21" fill="none" stroke="${d[3]}" stroke-width="6" stroke-dasharray="${p} ${100-p}" stroke-dashoffset="${-off}" transform="rotate(-90 21 21)"/>`;off+=p;return c}).join("");
@@ -85,10 +90,14 @@ function home(){
  const top=Object.entries(cnt).sort((a,b)=>b[1]-a[1]).slice(0,5);
  $("app").innerHTML=`<div class="hero"><img src="logo.png" alt="Logo"><h1>KHO HỌC LIỆU SỐ</h1><p>TRƯỜNG TH&amp;THCS VĨNH GIA 2</p><p style="font-size:14px">Xã Vĩnh Gia · Tỉnh An Giang</p><a class="web" href="http://thvathcsvg2.edu.vn" target="_blank" rel="noopener">🌐 Truy cập website nhà trường</a></div>
  <h2>📊 Bảng thống kê</h2><div class="g k kp">${k("📚",items.length,"Tổng học liệu","#2b7de9")}${k("🏫",new Set(items.map(x=>x.dept).filter(Boolean)).size,"Bộ phận đã đăng","#16a34a")}${k("👩‍🏫",Object.keys(cnt).length,"Giáo viên đóng góp","#d97706")}${k("🆕",items.filter(x=>x.at>=m0).length,"Đăng trong tháng","#db2777")}</div>
- <h2>🏫 Kho học liệu theo bộ phận <small class="meta">(bấm để vào kho)</small></h2><div class="g t">${DEPTS.map(([id,nm,ic,c])=>{const l=items.filter(x=>inD(x,nm));return `<a class="tile" href="#${id}" style="--c:${c}"><div class="ic">${ic}</div><b>${nm}</b><div class="n">${l.length}</div><small>Mới nhất: ${fd(l[0]&&l[0].at)}</small></a>`}).join("")}</div>
+ <h2>🏫 Kho học liệu theo bộ phận <small class="meta">(bấm để vào kho)</small></h2><div class="g t">${DEPTS.map(([id,nm,ic,c])=>{const l=items.filter(x=>inD(x,nm)),gv=new Set(l.map(x=>x.author).filter(Boolean)).size,cs=CATS.map(k=>[k[0],k[1],l.filter(x=>x.cat===k[0]).length]).filter(k=>k[2]),f=(C.DEPT_FOLDERS||{})[nm];
+ return `<div class="tile" style="--c:${c}"><div class="th"><div class="ic">${ic}</div><div><a class="stl" href="#${id}"><b>${nm}</b></a><small>Mới nhất: ${fd(l[0]&&l[0].at)}</small></div></div>
+ <div class="st"><div><b>${l.length}</b><span>học liệu</span></div><div><b>${gv}</b><span>giáo viên</span></div><div><b>${cs.length}</b><span>danh mục</span></div></div>
+ <div class="tm">${cs.length?cs.map(k=>`<a href="#${id}~${encodeURIComponent(k[0])}">${k[1]} ${k[0]} <b>${k[2]}</b></a>`).join(""):'<span class="meta">Chưa có học liệu</span>'}</div>
+ <div class="tb2"><a class="btn" href="#${id}">Xem kho →</a>${f?`<a class="btn o" target="_blank" rel="noopener" href="${dl(f)}">📁 Drive</a>`:""}</div></div>`}).join("")}</div>
  <div class="g p" style="margin-top:12px"><div class="pn"><h3>🥧 Tỉ lệ học liệu theo bộ phận</h3><div class="dn">${donut()}<div class="lg2">${DEPTS.map(d=>`<div style="--c:${d[3]}"><i></i>${d[1]}<b>${items.filter(x=>(x.dept||x.cat)===d[1]).length}</b></div>`).join("")}</div></div></div>
  <div class="pn"><h3>📈 Số học liệu đăng 6 tháng gần đây</h3>${months()}</div>
- <div class="pn"><h3>📁 Theo danh mục</h3>${bars(CATS.map(c=>[c[1]+" "+c[0],items.filter(x=>x.cat===c[0]).length]))}</div>
+ <div class="pn"><h3>📁 Theo danh mục</h3>${bars(CATS.map(c=>[c[1]+" "+c[0],items.filter(x=>x.cat===c[0]).length,"#all~"+encodeURIComponent(c[0])]))}</div>
  <div class="pn"><h3>🏆 Giáo viên đóng góp nhiều nhất</h3>${top.length?top.map(([a,v])=>`<div class="tp"><span class="av">${esc(a.trim().split(" ").pop().charAt(0).toUpperCase())}</span>${esc(a)}<b>${v}</b></div>`).join(""):'<div class="empty">Chưa có dữ liệu</div>'}</div></div>
  <div class="pn" style="margin-top:12px"><h3>🕒 Dòng thời gian tải lên gần đây</h3>${tline(items.slice(0,8))}</div>
  <p style="text-align:center"><a class="btn o" href="#all">Xem toàn bộ kho học liệu →</a></p>`}
@@ -97,8 +106,8 @@ function paint(){
  const base=D?items.filter(x=>inD(x,D[1])):items,q=S.q.toLowerCase().trim();
  $("chips").innerHTML=`<button class="chip${S.cat?"":" on"}" data-c="">Tất cả (${base.length})</button>`+CATS.map(c=>`<button class="chip${S.cat===c[0]?" on":""}" data-c="${c[0]}">${c[1]} ${c[0]} (${base.filter(x=>x.cat===c[0]).length})</button>`).join("");
  $("lst").innerHTML=itemsHtml(base.filter(x=>(!S.cat||x.cat===S.cat)&&(!q||[x.title,x.sub,x.author,x.desc,x.cat].join(" ").toLowerCase().includes(q))));}
-function deptView(d){
- D=d;S={cat:"",q:""};const base=d?items.filter(x=>inD(x,d[1])):items,c=d?d[3]:"#2b7de9";
+function deptView(d,cc){
+ D=d;S={cat:cc?decodeURIComponent(cc):"",q:""};const base=d?items.filter(x=>inD(x,d[1])):items,c=d?d[3]:"#2b7de9";
  $("app").innerHTML=`<div class="ban" style="--c:${c}"><div class="ic">${d?d[2]:"📚"}</div><div><h1>${d?"Kho học liệu "+d[1]:"Toàn bộ kho học liệu"}</h1><div>${base.length} học liệu · ${new Set(base.map(x=>x.author).filter(Boolean)).size} giáo viên · cập nhật ${fd(base[0]&&base[0].at)}</div></div></div>
  <div class="act"><a class="btn" target="_blank" rel="noopener" href="${(()=>{const f=d?(C.DEPT_FOLDERS||{})[d[1]]:C.ROOT;return f?dl(f):"#"})()}">📤 Tải học liệu lên Drive${d?" của "+d[1]:""}</a></div><div class="hint">Đặt tên tệp: họ và tên_tổ chuyên môn_môn_lớp.2026</div>
  <div class="chips" id="chips"></div><input id="q" type="search" placeholder="Tìm học liệu, môn, khối, giáo viên…"><div id="lst"></div>
@@ -110,15 +119,24 @@ function admin(){
  <div class="hint" style="margin-top:10px">Đặt tên tệp: <b>họ và tên_tổ chuyên môn_môn_lớp.2026</b> (để kho tự ghi đúng giáo viên và môn). Tải xong, học liệu tự hiện trên web sau vài phút.</div>
  <div class="ug">${DEPTS.map(d=>`<a class="tile" target="_blank" rel="noopener" href="${(C.DEPT_FOLDERS||{})[d[1]]?dl(C.DEPT_FOLDERS[d[1]]):"#"}" style="--c:${d[3]}"><div class="ic">${d[2]}</div><b>${d[1]}</b><small>📤 Mở thư mục tải lên</small></a>`).join("")}</div>`}
 function route(){
- const h=(location.hash||"#home").slice(1),d=DEPTS.find(x=>x[0]===h);
+ const raw=(location.hash||"#home").slice(1),[h,cc]=raw.split("~"),d=DEPTS.find(x=>x[0]===h);
  document.querySelectorAll("nav a").forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+h));
  const dd=document.querySelector(".dd");if(dd)dd.classList.remove("open");
- if(h==="all")deptView(null);else if(h==="quantri")admin();else if(d)deptView(d);else home();
- if(msg)$("app").innerHTML+=`<p class="hint" style="text-align:center;${msg[0]=="⚠"?"color:#d33;font-weight:700;font-size:14px":""}">${esc(msg)}</p>`;
+ if(h==="all")deptView(null,cc);else if(h==="quantri")admin();else if(d)deptView(d,cc);else home();
  window.scrollTo(0,0)}
 window.addEventListener("hashchange",route);
 document.querySelector(".ddb").onclick=()=>document.querySelector(".dd").classList.toggle("open");
-let msg="";
-(async()=>{try{if(!C.API_URL&&!C.SHEET_CSV)msg="⚠ Chưa dán link Apps Script vào API_URL trong config.js (hoặc config.js chưa được tải lên GitHub).";items=C.API_URL?await (await fetch(C.API_URL)).json():C.SHEET_CSV?fromSheet(await (await fetch(C.SHEET_CSV)).text()):await (await fetch("data/resources.json")).json()}catch(e){items=[];msg="⚠ Không đọc được dữ liệu từ Drive ("+(e.message||e)+"). Kiểm tra link Apps Script: phải kết thúc bằng /exec và để quyền truy cập là Bất kỳ ai."}if(!Array.isArray(items)){items=[];msg=msg||"⚠ Dữ liệu trả về không đúng định dạng."}else if(!msg)msg="✔ Đã đọc "+items.length+" học liệu từ Drive.";items.sort((a,b)=>b.at-a.at);route()})();
+function jsonp(u){return new Promise((ok,no)=>{const cb="cb"+Date.now(),sc=document.createElement("script"),t=setTimeout(()=>{no(new Error("timeout"));sc.remove()},30000);
+ window[cb]=d=>{clearTimeout(t);ok(d);sc.remove();delete window[cb]};
+ sc.onerror=()=>{clearTimeout(t);no(new Error("load"));sc.remove()};
+ sc.src=u+(u.includes("?")?"&":"?")+"callback="+cb;document.head.appendChild(sc)})}
+const sortI=a=>a.sort((x,y)=>y.at-x.at);
+try{const c=JSON.parse(localStorage.getItem("kho")||"[]");if(Array.isArray(c)&&c.length)items=sortI(c)}catch(_){}
+(async()=>{const ld=$("ld");if(ld)ld.style.display="block";
+ if(!items.length&&C.API_URL){try{const j=await (await fetch("data/resources.json")).json();if(Array.isArray(j)&&j.length&&!items.length){items=sortI(j);route()}}catch(_){}}
+ try{let n=C.API_URL?await jsonp(C.API_URL):C.SHEET_CSV?fromSheet(await (await fetch(C.SHEET_CSV)).text()):await (await fetch("data/resources.json")).json();
+  if(Array.isArray(n)){n=sortI(n);if(JSON.stringify(n)!==JSON.stringify(items)){items=n;route()}if(C.API_URL){try{localStorage.setItem("kho",JSON.stringify(n))}catch(_){}}}
+ }catch(e){console.error(e)}
+ if(ld)ld.style.display="none"})();
 route();
 </script></body></html>
